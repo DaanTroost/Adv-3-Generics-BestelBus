@@ -18,6 +18,15 @@ public class PakkettenBus {
     }
 
     public void laadPakket(Pakket pakket) {
+        if (pakket.getGewicht() < 0) {
+            throw new IllegalArgumentException("Het gewicht is negatief!");
+        } else if (pakket.getGewicht() + totaalGewicht > maximumGewicht){
+            throw new IllegalArgumentException("Het inladen van dit pakket overschrijdt het " +
+                    "maximumgewicht. Pakket niet toegevoegd.");
+        } else {
+            lading.add(pakket);
+            totaalGewicht += pakket.getGewicht();
+        }
 
     }
 
