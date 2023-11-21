@@ -17,8 +17,6 @@ public class BusLauncher {
         for (Pakket p : lijstVanBestand) {
             kuBus.laadPakket(p);
         }
-
-
-
+        System.out.println(kuBus.zoekZwaarstePakket());
     }
 }

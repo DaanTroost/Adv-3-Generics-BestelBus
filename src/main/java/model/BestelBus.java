@@ -33,8 +33,4 @@ public class BestelBus<T extends Weighable> {
         return this.cargoList;
     }
 
-
-
-
-
 } // end of BestelBus
