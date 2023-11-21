@@ -6,9 +6,4 @@ package model;
  */
 public interface Weighable {
     int getGewicht();
-
-
-
-
-
 }
