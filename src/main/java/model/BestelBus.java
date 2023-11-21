@@ -29,8 +29,30 @@ public class BestelBus<T extends Weighable> {
         }
     }
 
+    public T findHeaviestCargo(){
+        if (cargoList.isEmpty()){
+            return null;
+        } else {
+            return findHeaviestCargo(0);
+        }
+    }
+
+    private T findHeaviestCargo(int index){
+        if (index == cargoList.size()){
+            return cargoList.get(index - 1);
+        }
+        T heaviest = findHeaviestCargo(index + 1);
+        if (cargoList.get(index).getGewicht() > heaviest.getGewicht()){
+            return cargoList.get(index);
+        } else {
+            return heaviest;
+        }
+    }
+
     public List<T> getCargoList(){
         return this.cargoList;
     }
+
+
 
 } // end of BestelBus
